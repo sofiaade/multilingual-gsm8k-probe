@@ -217,7 +217,7 @@ def translate_dataset(
         for lang in target_langs:
             if lang == "en":
                 continue
-            translations[lang] = translate_text(question_en, lang, cache)
+            translations[lang] = translate_text(question_en, lang, cache, sleep_between=2.0)
 
         translated.append(TranslatedProblem(
             idx=i, question_en=question_en, answer=answer, translations=translations
